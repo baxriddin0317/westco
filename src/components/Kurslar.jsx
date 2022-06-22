@@ -20,7 +20,7 @@ function Kurslar() {
 
             {load ? data.map((d) => (
                 <div key={d._id} className="sm:w-1/2 overflow-hidden md:max-w-sm m-2 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <Link to="#">
+                    <Link to="#" className='w-96 h-48 p-2 flex items-center justify-center'>
                         <img className="rounded-t-lg w-full" src={d.imgUrl} alt="kurs rasmi" />
                     </Link>
                     <div className="p-5">

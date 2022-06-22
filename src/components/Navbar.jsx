@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {Link} from "react-router-dom"
+import Dropdown from "./Dropdown";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,6 +48,9 @@ function Navbar() {
                       >
                         Kitoblar
                       </Link>
+                    </li>
+                    <li>
+                      <Dropdown />
                     </li>
                   </ul>
                 </div>

@@ -14,7 +14,7 @@ function App() {
       <Routes>
         {
           token ? 
-          <Route path='/*' element={<Homa />} /> : 
+          <Route path='/*' element={<Homa  />} /> : 
           <Route path='/*' element={<NextPage setToken={setToken} />} />
         }
         <Route path='/admin' element={<Admin />} />

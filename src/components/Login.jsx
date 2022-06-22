@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import {Link, useNavigate} from "react-router-dom"
 
 import http from "../services/http/http"
@@ -7,6 +7,7 @@ function Login({setToken}) {
     const fullNameRef = useRef();
     const passwordRef = useRef();
     const  navigation = useNavigate();
+    const [war, setWar] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +19,8 @@ function Login({setToken}) {
             setToken(res.data.data.token);
             window.localStorage.setItem("token", res.data.data.token);
             navigation('/');
+        }).catch(e => {
+            setWar(e.message)
         })
     }
 
@@ -25,6 +28,11 @@ function Login({setToken}) {
     <div className='max-w-7xl h-screen mx-auto my-4'>
         <div className="p-4 max-w-sm mx-auto bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
             <form className="space-y-6" onSubmit={handleSubmit}>
+                {war &&  <div className="bg-red-100 mb-4 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <p className="font-bold">Informational message</p>
+                    <p className="text-sm">{war}</p>
+                </div>}
+
                 <h5 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
                 <div>
                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your name</label>

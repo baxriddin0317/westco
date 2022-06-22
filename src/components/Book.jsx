@@ -25,7 +25,7 @@ function Book() {
                 <p className=" text-base mb-9">
                 {book.description}
                 </p>
-                <a href={book.ebookUrl} className="font-bold ">
+                <a href={book.ebookUrl} className="font-bold cursor-pointer">
                     kitob linki
                 </a>
             </div>

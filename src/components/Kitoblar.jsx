@@ -20,8 +20,8 @@ function Kitoblar() {
     <div className='w-full p-2 flex flex-wrap items-start justify-center md:justify-between'>
         {load ? data.map((d) => (
             <div key={d._id} className="sm:w-1/2 overflow-hidden p-2 md:max-w-sm m-2 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                <Link to="#">
-                    <img className="rounded-t-lg w-full" src={d.imgUrl} alt="kitob rasmi" />
+                <Link to="#" className='w-96 h-48 p-2 flex items-center justify-center'>
+                    <img className="rounded-t-lg w-full object-cover" src={d.imgUrl} alt="kitob rasmi" />
                 </Link>
                 <div className="p-5">
                     <Link to="#">
