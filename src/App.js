@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route} from "react-router-dom"
+import { useState } from 'react';
+import NextPage from './pages/NextPage';
+import Homa from './pages/Homa';
+import Admin from './pages/Admin';
+
 
 function App() {
+  const [token, setToken] = useState(window.localStorage.getItem('token'))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full h-full">
+      <Routes>
+        {
+          token ? 
+          <Route path='/*' element={<Homa />} /> : 
+          <Route path='/*' element={<NextPage setToken={setToken} />} />
+        }
+        <Route path='/admin' element={<Admin />} />
+      </Routes>
     </div>
   );
 }
