@@ -7,7 +7,7 @@ function Admin() {
     const [load, setLoad] = useState(false);
 
     useEffect(() => {
-        http.get("user/course?limit=5&page=1")
+        http.get("/employee/book?limit=5&page=1")
         .then(res => {
             setLoad(true);
             setData(res.data.data.data);

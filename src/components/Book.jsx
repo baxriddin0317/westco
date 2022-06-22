@@ -18,11 +18,11 @@ function Book() {
 
   return (
     <div className='max-w-4xl mx-auto'>
-        {load ?  <div className="rounded overflow-hidden shadow-lg">
+        {load ?  <div className="rounded overflow-hidden shadow-lg text-white">
             <img className="w-full" src={book.imgUrl} alt="img url" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{book.name} </div>
-                <p className="text-gray-700 text-base mb-9">
+                <p className=" text-base mb-9">
                 {book.description}
                 </p>
                 <a href={book.ebookUrl} className="font-bold ">
@@ -32,7 +32,7 @@ function Book() {
             <div className="px-6 pt-4 pb-2">
             
             </div>
-        </div> : <h1 className='font-bold text-2xl'>
+        </div> : <h1 className='font-bold text-2xl text-white'>
                     Loading....
                 </h1>
         }

@@ -10,7 +10,7 @@ function App() {
   const [token, setToken] = useState(window.localStorage.getItem('token'))
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full ">
       <Routes>
         {
           token ? 
